@@ -33,15 +33,11 @@ assert("tsort - cycle") do
 end
 
 assert("tsort - array") do
-  # TODO
-  # a = TSortArray[[1], [0], [0], [2]]
-  a = TSortArray.new.concat([[1], [0], [0], [2]])
+  a = TSortArray[[1], [0], [0], [2]]
   assert_equal([[0, 1], [2], [3]],
                a.strongly_connected_components.map {|nodes| nodes.sort})
 
-  # TODO
-  # a = TSortArray[[], [0]]
-  a = TSortArray.new.concat([[], [0]])
+  a = TSortArray[[], [0]]
   assert_equal([[0], [1]],
                a.strongly_connected_components.map {|nodes| nodes.sort})
 end

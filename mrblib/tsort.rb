@@ -429,12 +429,7 @@ module TSort
     }
 
     if node_id == minimum_id
-      # TODO
-      # component = stack.slice!(stack_length .. -1)
-      component = []
-      while stack.size > stack_length
-        component.unshift(stack.pop)
-      end
+      component = stack.slice!(stack_length .. -1)
       component.each {|n| id_map[n] = nil}
       yield component
     end
